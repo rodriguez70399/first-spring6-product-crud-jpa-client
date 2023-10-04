@@ -1,4 +1,4 @@
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
   `productId` int NOT NULL,
   `units` int DEFAULT NULL,
