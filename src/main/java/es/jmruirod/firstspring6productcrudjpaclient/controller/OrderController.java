@@ -18,6 +18,11 @@ import es.jmruirod.firstspring6productcrudjpaclient.model.TemporalOrder;
 import es.jmruirod.firstspring6productcrudjpaclient.service.OrderServiceInterface;
 import es.jmruirod.firstspring6productcrudjpaclient.service.ProductServiceInterface;
 
+/**
+ * Controlador que gestiona las solicitudes relacionadas con los pedidos de productos.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @RestController
 public class OrderController 
 {
@@ -27,6 +32,13 @@ public class OrderController
     @Autowired
     private ProductServiceInterface productService;
 
+    /**
+     * Crea un nuevo pedido a partir de un objeto TemporalOrder.
+     * 
+     * @param temporalOrder El objeto que contiene la información del pedido.
+     * @return ResponseEntity con un mensaje de éxito o error.
+     * @apiNote POST : localhost:PUERTO/order
+     */
     @PostMapping(value = "order", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> create(@RequestBody TemporalOrder temporalOrder)
     {
@@ -57,6 +69,12 @@ public class OrderController
         return ResponseEntity.ok("Pedido realizado con éxito.");
     }
 
+    /**
+     * Obtiene una lista de todos los pedidos.
+     * 
+     * @return Lista de objetos Order representando los pedidos.
+     * @apiNote GET : localhost:PUERTO/orders
+     */
     @GetMapping(value = "orders", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Order> getAll() 
     {

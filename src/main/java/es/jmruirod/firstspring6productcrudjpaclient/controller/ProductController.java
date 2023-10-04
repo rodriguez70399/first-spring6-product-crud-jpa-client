@@ -10,12 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 import es.jmruirod.firstspring6productcrudjpaclient.model.Product;
 import es.jmruirod.firstspring6productcrudjpaclient.service.ProductServiceInterface;
 
+/**
+ * Controlador que gestiona las solicitudes relacionadas con los productos.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @RestController
 public class ProductController 
 {
     @Autowired
     private ProductServiceInterface service;
 
+    /**
+     * Obtiene una lista de todos los productos.
+     * 
+     * @return Lista de objetos Product representando los productos.
+     * @apiNote GET: localhost:PUERTO/products
+     */
     @GetMapping(value = "products", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Product> getAll()
     {

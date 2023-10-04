@@ -9,6 +9,11 @@ import org.springframework.web.client.RestTemplate;
 
 import es.jmruirod.firstspring6productcrudjpaclient.model.Product;
 
+/**
+ * Implementación de la interfaz {@link ProductServiceInterface} que proporciona servicios para la gestión de productos.
+ * 
+ * @author Jose Manuel Ruiz Rodriguez
+ */
 @Service
 public class ProductServiceInterfaceImplemented implements ProductServiceInterface
 {
@@ -28,6 +33,11 @@ public class ProductServiceInterfaceImplemented implements ProductServiceInterfa
         return this.template.getForObject(url + "product/" + id, Product.class);
     }
 
+    /**
+     * Obtiene una lista de todos los productos disponibles.
+     * 
+     * @return Lista de productos.
+     */
     @Override
     public List<Product> getAll() 
     {
